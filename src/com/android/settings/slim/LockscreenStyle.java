@@ -281,8 +281,8 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (value == null) {
             resId = R.string.lockscreen_lock_icon_default;
             mLockIcon.setValueIndex(2);
-        } else if (value.contains("slim_lock")) {
-            resId = R.string.lockscreen_lock_icon_slim;
+        } else if (value.contains("devil_lock")) {
+            resId = R.string.lockscreen_lock_icon_devil;
             mLockIcon.setValueIndex(1);
         } else {
             resId = R.string.lockscreen_lock_icon_custom;
@@ -336,7 +336,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
     }
 
     private void resizeSlimLock() {
-        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.slim_lock);
+        Bitmap slimLock = BitmapFactory.decodeResource(getResources(), R.drawable.devil_lock);
         if (slimLock != null) {
             String path = null;
             int px = requestImageSize();
@@ -345,7 +345,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
                 File image = new File(getActivity().getFilesDir() + File.separator
-                            + "slim_lock" + System.currentTimeMillis() + ".png");
+                            + "devil_lock" + System.currentTimeMillis() + ".png");
                 path = image.getAbsolutePath();
                 mLockImage.renameTo(image);
                 FileOutputStream outPut = new FileOutputStream(image);
